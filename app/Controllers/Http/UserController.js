@@ -32,8 +32,7 @@ class UserController {
         } 
     }
     async logout ({auth,response}){
-          
-        //const userr = await User.find(1);     
+             
         try{
             const apiToken = await auth.getAuthHeader()
             await auth.authenticator('api').revokeTokens([apiToken])                

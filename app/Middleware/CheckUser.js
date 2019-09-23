@@ -9,14 +9,11 @@ class CheckUser {
    * @param {Request} ctx.request
    * @param {Function} next
    */
-  async handle ({ request }, next) {
+  async handle ({ request,response,auth }, next) {
     // call next to advance the request
-    await next()
-  }
-  async Validar({auth, response}, next){
     try{
       
-      if(auth.user.id == 7){
+      if(auth.user.id == 9){
         await next()
       }
     }catch(error){
@@ -24,6 +21,7 @@ class CheckUser {
     }
     
   }
+  
 }
 
 module.exports = CheckUser
